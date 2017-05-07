@@ -6,7 +6,11 @@ import (
 
 type awsService struct {
 	serviceName string
-	regionsAvailable []string 
+	regionsAvailable []string
+}
+
+func awsQuery(s awsService) {
+	fmt.Println("Querying", s.serviceName, "...")
 }
 
 func main() {
@@ -19,4 +23,6 @@ func main() {
 	fmt.Println("* Service detials *")
 	fmt.Println("Name:", s3.serviceName)
 	fmt.Println("Regions available:", s3.regionsAvailable)
+
+	awsQuery(s3)
 }
